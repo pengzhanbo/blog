@@ -84,7 +84,7 @@ if (supportsTemplate()) {
 
 HTML 模板标准化进程耗时十分长久。从过去到现在，出现了很多各种各样的方法去创建可重用的模板。
 
-##### 方法一：使用隐藏的DOM元素，将模板内容放在某个标签内，使用`display:none`隐藏元素。
+__方法一：使用隐藏的DOM元素，将模板内容放在某个标签内，使用`display:none`隐藏元素。__
 ``` html
 <div style="display:none">
     <img src="" />
@@ -96,7 +96,7 @@ HTML 模板标准化进程耗时十分长久。从过去到现在，出现了很
 3. × 非惰性， 图片资源依然会发出请求。
 4. x 难以设置样式和主题，需要为所有CSS增加规则。
 
-##### 方法二：使用textare 标签，并使用`display:none`隐藏元素。
+__方法二：使用textarea 标签，并使用`display:none`隐藏元素。__
 ``` html
 <textarea style="display:none">
     <img src="" />
@@ -107,7 +107,7 @@ HTML 模板标准化进程耗时十分长久。从过去到现在，出现了很
 2. √ 惰性，由于模板内容是字符串，图片资源不会发出请求。
 3. x 模板内容是字符串，需要进一步将其转为DOM。
 
-##### 方法三： 重载脚本
+__方法三： 重载脚本__
 ``` html
 <script type="text/x-handlebars-template">
     <img src="" />
