@@ -10,7 +10,7 @@
         <child></child>
     </parent>
     ```
-    拥有类似结构，`parent`组件包含`child`组件，则`child`组件是`parent`的父组件，`parent`组件是`child`组件的父组件。
+    拥有类似结构，`parent`组件包含`child`组件，则`child`组件是`parent`的子组件，`parent`组件是`child`组件的父组件。
 2. 兄弟组件
     ``` html
     <item></item>
