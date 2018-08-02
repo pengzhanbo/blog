@@ -1,4 +1,4 @@
-# WebComponent——custom elements
+# WebComponent——custom elements
 
 > _pengzhanbo | 2018-08-01_
 ____
@@ -32,7 +32,7 @@ _创建自定义元素有两种方式，这里只讨论 __DOM LEVEL 3__ 提供�
 `customElements.define(tarName, class[, option])`
 - `tarName`: `DOMString`，用于表示所创建的元素名称。名称必须是小写字母开头，且必须包含至少一个`-`，任何不含`-`的自定义标签都会导致错误。例如`my-tag`,`my-list-item`为合法标签，`my_tag`,`myTag`都是非法的自定义标签名称；
 - `class`: 类对象，用于定义元素行为.
-- `option`: 包含 `extends` 属性的配置对象，可以指定所创建的元素继承自那个内置元素，可以继承任何内置元素；
+- `option`: 包含 `extends` 属性的配置对象，可以指定所创建的元素继承自那个内置元素，可以继承任何内置元素；
 
 `customElements`的类对象可以通过 ES 2015的类语法定义：
 ``` javascript
@@ -87,7 +87,7 @@ class MyCustom extends HTMLElement {
 }
 ```
 
-如果需要在元素属性发生变化后触发 `attributeChangedCallback`，就必须监听这些属性。 我们可以通过定义静态属性`observedAttributed`的 get函数来添加需要监听的属性：
+如果需要在元素属性发生变化后触发 `attributeChangedCallback`，就必须监听这些属性。 我们可以通过定义静态属性`observedAttributed`的 get函数来添加需要监听的属性：
 ``` javascript
 static get observedAttributed() {
     return ['name'];
@@ -124,10 +124,10 @@ document.appendChild(tag);
 > HTML规范：  
 > 非规范定义的元素必须使用 _HTMLUnknownElement_ 接口。
 
-我们在页面中声明一个 `<myTag>`标签，由于它是非标准标签，所以会继承 `HTMLUnknownElement`。
+我们在页面中声明一个 `<myTag>`标签，由于它是非标准标签，所以会继承 `HTMLUnknownElement`。
 
 对于自定义元素，情况有所不同。 拥有合法元素名称的自定义元素继承自`HTMLElement`。   
-对于不支持自定义元素的浏览器，拥有合法元素名称的标签，仍然继承`HTMLUnknownElement`。
+对于不支持自定义元素的浏览器，拥有合法元素名称的标签，仍然继承`HTMLUnknownElement`。
 
 ### 扩展内置元素特性
 
@@ -148,9 +148,9 @@ customElements.define("custom-button", CustomButton, {
 
 ### 自定义元素样式
 
-自定义元素和内置元素一样，可以使用CSS各类选择器定义样式。
+自定义元素和内置元素一样，可以使用CSS各类选择器定义样式。
 
-自定义元素规范还提出了一个新的CSS伪类`:unresolved`。在浏览器调用你的`createdCallback()` 之前，这个伪类可以匹配到未完成元素提升的自定义元素。
+自定义元素规范还提出了一个新的CSS伪类`:unresolved`。在浏览器调用你的`createdCallback()` 之前，这个伪类可以匹配到未完成元素提升的自定义元素。
 ``` css
 custom-button{
     opacity: 1;
@@ -165,7 +165,7 @@ custom-button:unresolved{
 
 ### 浏览器支持
 
-`Chrome`和`Opera`默认支持custom elements。`Firefox`计划在60/61的版本中默认支持自定义元素。`Safair`目前不支持自定义元素对内置元素的扩展。`Edge`在实现中。
+`Chrome`和`Opera`默认支持custom elements。`Firefox`计划在60/61的版本中默认支持自定义元素。`Safair`目前不支持自定义元素对内置元素的扩展。`Edge`在实现中。
 
 
 ### 补充内容：`document.registerElement`
@@ -217,6 +217,6 @@ var MyTag = document.registerElement('my-tag', {
 });
 ```
 
-### 结语
+### 结语
 
-自定义元素作为 `webComponent` 规范中的一部分，为web应用开发提供了更多的可能性，配合`webComponent` 规范的其他内容，可以为web开发者提供更强大的能力。
+自定义元素作为 `webComponent` 规范中的一部分，为web应用开发提供了更多的可能性，配合`webComponent` 规范的其他内容，可以为web开发者提供更强大的能力。
